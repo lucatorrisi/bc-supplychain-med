@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>TRACEABILITY PROCESS</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class='fas fa-box-open' style='font-size:36px'></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">TRACEABILITY PROCESS</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Traceability Process
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseStatus" aria-expanded="true" aria-controls="collapseOne">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Update Status</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseOwner" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Update Owner</span>
+          </a>
+        </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+       <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Account</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><p id="accountAddr"></p></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class='far fa-address-card' style='font-size:36px'></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Reserve (ETH) </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><p id="accountBalance"></p></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="collapse" id="collapseStatus">
+                <input type="text" class="form-control form-control-user" id="newStatus" placeholder="New status">
+                <button  class="btn btn-google btn-user btn-block" onclick="App.modifyStatus(); return false"> Modify Status</button>
+          </div>
+          <div class="collapse" id="collapseOwner">
+                  <input type="text" class="form-control form-control-user" id="newOwner" placeholder="New Owner">
+                  <button  class="btn btn-google btn-user btn-block" onclick="App.modifyProcessOwner(); return false"> Modify Owner</button>
+                </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Product Details</h6>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="m-0 font-weight-bold text-primary">Name<p class="text-muted" id="certName"></p></div>
+                    <div class="m-0 font-weight-bold text-primary">Description<p class="text-muted" id="certDescr"></p></div>
+                    <div class="m-0 font-weight-bold text-primary">Current Owner<p class="text-muted" id="certCurrOwner"></p></div>
+                    <div class="m-0 font-weight-bold text-primary">Unique Identifier<p class="text-muted" id="certUniqueId"></p></div>
+                    <div class="m-0 font-weight-bold text-primary">Contract Address<p class="text-muted" id="contractAddr"></p></div>
+                    <div class="m-0 font-weight-bold text-primary">Case Box Address<p class="text-muted" id="caseboxAddr"></p></div>
+                    <div class="m-0 font-weight-bold text-primary">Case Box Unique Identifier<p class="text-muted" id="caseBoxUniqueId"></p></div>
+                      <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">QRCode</h6>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                          </div>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                          <div class="chart-pie pt-4 pb-2">
+                              <div class="text-center">
+                                  <canvas id="QRCodeCanvasProd" class="QRCode" height="100%" width="100%" style="height: 100%; width: 100%;">
+                                    </canvas>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4" id="actionsList">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <p>
+                    <a class="m-0 font-weight-bold text-primary" data-toggle="collapse" href="#collapseUpdate" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Traceability Movements
+                    </a>
+                  </p>
+                </div>
+                <div class="card-body" id="card-body">
+                </div>
+                </div>
+              </div>
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Product Current Position</h6>
+                    <div  class="card-body" aria-labelledby="dropdownMenuLink">
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div  class="card-body">
+                  <div id="map" class="z-depth-1-half map-container" style="height: 500px">
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/qrcode.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "bcsifisc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ferdinando",
+  "license": "Academic",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "geolocation": "^0.2.0",
+    "html-webpack-plugin": "^2.30.1",
+    "html5-geolocation": "^2.0.0",
+    "qrcode": "^1.4.1",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
+}
